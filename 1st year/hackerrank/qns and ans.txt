@@ -40,3 +40,48 @@ public class Solution {
 ______________________________________________________________________________________________________________________________________________
 
 
+---------------------------------------2 Grading-------------------------------------------------------
+
+Every student receives a grade in the inclusive range from  to .
+Any grade less than  is a failing grade.
+Sam is a professor at the university and likes to round each student's grade  according to these rules:
+
+If the difference between the grade  and the next multiple of 5 is less than 3, round grade  up to the next multiple of .
+If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
+
+
+
+
+MY Solution
+
+
+ Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        for(int num:arr){
+            if(num>37){
+                
+                int x = num/5;
+                int y = (x+1)*5;
+                
+                if(y-num<3){
+                    System.out.println(y);
+                }
+                else{
+                    System.out.println(num);
+                }
+            }
+            else{
+               System.out.println(num);
+            }
+            
+        }
+
+
+
+
+        EASY SOLN    System.out.println(grade < 38 || grade % 5 < 3 ? grade : grade + (5 - (grade % 5)));
